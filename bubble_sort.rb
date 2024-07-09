@@ -1,23 +1,19 @@
-arr = [78,73,4,2,1,0]
-##make optimization for k sorted elements
-def iteration (element, arr, e_index)
-  arr[1..].each{|compared|
-
-  }
-end
-
-def bubble_sort (arr) 
+arr = [4,3,78,2,0,2]
+def bubble_sort (arr)
+  k = 0
   (arr.length-1).times{
-    arr.each.with_index{|element, index|
-      if arr[index+1] && (element > arr[index+1])
-        arr[index .. index+1] = arr[index+1], arr[index]
+    for i in 0 .. (arr.length-2-k)
+      if arr[i+1] && (arr[i] > arr[i+1])
+        arr[i .. i+1] = arr[i+1], arr[i]
       end
-      p arr
-    }
+    end
+    k+=1
   }
+  arr
+    
 end
   
   
 
 
-bubble_sort(arr)
+p bubble_sort(arr)
